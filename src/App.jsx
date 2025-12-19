@@ -123,7 +123,7 @@ const App = () => {
                   ? movie.overview
                   : movie.overview?.slice(0, 90) + "..."}
               </p>
-
+              {/*CONTRIBUTION CHECK*/}
               {movie.overview && movie.overview.length > 90 && (
                 <button
                   onClick={() =>
