@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const spinner = () => {
+const Spinner = () => {
   return (
     <div>
         <button type="button" class="inline-flex items-center text-body bg-neutral-primary-soft border border-default hover:bg-neutral-secondary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary-soft shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
@@ -10,9 +10,8 @@ const spinner = () => {
         </svg>
 </button>
 
-
     </div>
   )
 }
 
-export default spinner
+export default Spinner;
