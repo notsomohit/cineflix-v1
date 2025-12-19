@@ -331,3 +331,11 @@ More comprehensive version at shenanigans.shoghisimon.ca/collection/css
       426.5px 6480px;
   }
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

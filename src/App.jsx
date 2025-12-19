@@ -8,6 +8,8 @@ const App = () => {
   const [errorMessage,setErrorMessage] = useState("");
   const [movieList,setMovieList] = useState([]);
   const [isLoading,setIsLoading] = useState(false);
+  const [expandedMovie, setExpandedMovie] = useState(null);
+
 
   const API_BASE_URL = "https://api.themoviedb.org/3";
   const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -90,22 +92,53 @@ const App = () => {
           
           {movieList.map((movie) => (
         
-          <li key={movie.id} className="bg-white/5 rounded-xl overflow-hidden m-2 shadow-lg shadow-black/60 hover:scale-105 transition-transform duration-300">
-            
+          <li
+            key={movie.id}
+            className="bg-white/5 rounded-xl overflow-hidden m-2 shadow-lg shadow-black/60 hover:scale-105 transition-transform duration-300"
+          >
             {movie.poster_path ? (
-              <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="w-full h-75 object-cover"/>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={movie.title}
+                className="w-full h-75 object-cover"
+              />
             ) : (
               <div className="w-full h-75 bg-gray-800 flex items-center justify-center text-white/60">
                 No Image
               </div>
             )}
 
-            <div className="p-3.5">
-              <p className="text-sm font-medium text-white truncate">
+            <div className="p-3.5 space-y-2">
+
+              <p className="text-sm font-semibold text-white truncate">
                 {movie.title}
               </p>
+
+              <p className="text-xs text-yellow-400">
+                ⭐ {movie.vote_average?.toFixed(1)} / 10
+              </p>
+
+              <p className="text-xs text-white/70">
+                {expandedMovie === movie.id
+                  ? movie.overview
+                  : movie.overview?.slice(0, 90) + "..."}
+              </p>
+
+              {movie.overview && movie.overview.length > 90 && (
+                <button
+                  onClick={() =>
+                    setExpandedMovie(
+                      expandedMovie === movie.id ? null : movie.id
+                    )
+                  }
+                  className="text-xs text-red-400 hover:underline"
+                >
+                  {expandedMovie === movie.id ? "Read less" : "Read more"}
+                </button>
+              )}
             </div>
-        </li>
+          </li>
+
       ))}
     </ul>
   )}
