@@ -13,8 +13,9 @@ const Navbar = () => {
         {/* Links */}
         <div className="font-inter hidden md:flex items-center gap-8 text-sm text-white/80">
           <a href="#" className="hover:text-white transition">Home</a>
-          <a href="#" className="hover:text-white transition">Trending</a>
-          <a href="#" className="hover:text-white transition">About</a>
+          <a href="#trending" className="hover:text-white transition">Trending</a>
+          <a href="#all_movies" className="hover:text-white transition">All movies</a>
+          <a href="#about_us" className="hover:text-white transition">About us</a>
         </div>
 
         <button className="px-4 py-2 rounded-b-md bg-white/10 hover:bg-white/20 transition text-sm text-white">

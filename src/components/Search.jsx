@@ -1,23 +1,20 @@
 import React from "react";
 import { Search } from "lucide-react";
 
-const SearchBar = ({searchTerm,setSearchTerm}) => {
+const SearchBar = ({ searchTerm, setSearchTerm, onSearch }) => {
   return (
-    <div className="w-full flex justify-center mt-6 px-4">
-      <div className="flex w-full max-w-2xl md:max-w-3xl lg:max-w-4xl backdrop-blur-md bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-lg ">
-        
-        <input 
-          type="text" placeholder="Search for thousands of movies..."
-          className="flex-1 bg-transparent px-5 py-3 text-white placeholder-white/50 outline-none text-sm md:text-base"
-          value={searchTerm} 
-          onChange={(e)=>setSearchTerm(e.target.value)}
-        />
+    <div className="flex items-center w-4xl gap-3 bg-white/10 backdrop-blur-md px-4 py-3 m-2 rounded-xl">
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search movies..."
+        className="bg-transparent outline-none text-white w-full"
+      />
 
-        <div className=" h-full flex items-center pr-2">
-          
-          <Search />
-        </div>         
-      </div>
+      <button onClick={onSearch} className="text-white/70 hover:text-white">
+        <Search/>
+      </button>
     </div>
   );
 };
