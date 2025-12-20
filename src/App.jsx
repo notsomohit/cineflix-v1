@@ -168,6 +168,7 @@ const App = () =>{
                         {
                             trendingMovies.map((movie) => (
 
+<<<<<<< HEAD
                                 <div key ={movie.id} className=" scroll-smooth min-w-40 sm:min-w-45 md:min-w-50 bg-white/5 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 shadow-lg shadow-black/50"  
                                 onWheel={(e) => {
                                     e.currentTarget.scrollLeft += e.deltaY*0.8;
@@ -185,6 +186,28 @@ const App = () =>{
                                         <p className="text-sm font-semibold text-white truncate">
                                             {movie.title}
                                         </p>
+=======
+              <p className="text-xs text-white/70">
+                {expandedMovie === movie.id
+                  ? movie.overview
+                  : movie.overview?.slice(0, 90) + "..."}
+              </p>
+              {/*CONTRIBUTION CHECK*/}
+              {movie.overview && movie.overview.length > 90 && (
+                <button
+                  onClick={() =>
+                    setExpandedMovie(
+                      expandedMovie === movie.id ? null : movie.id
+                    )
+                  }
+                  className="text-xs text-red-400 hover:underline"
+                >
+                  {expandedMovie === movie.id ? "Read less" : "Read more"}
+                </button>
+              )}
+            </div>
+          </li>
+>>>>>>> 422bb5d10b6b1184735d6b5a79ff45286fc4359e
 
                                         <p className="text-xs text-yellow-400">
                                             ⭐ {movie.vote_average?.toFixed(1)}
