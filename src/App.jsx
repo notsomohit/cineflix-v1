@@ -19,6 +19,7 @@ const App = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [topAnime, setTopAnime] = useState([]);
+  const [pageLoading, setPageLoading] = useState(true);
 
   const resultsRef = useRef(null);
 
@@ -114,13 +115,32 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetch_movies();
-    fetchTrendingMovies();
-    fetchTopRatedAnime();
+    const loadAll = async() =>{
+      await Promise.all([
+        fetch_movies(),
+        fetchTrendingMovies(),
+        fetchTopRatedAnime(),
+        new Promise((resolve) => setTimeout(resolve,2000)),
+      ]);
+      setPageLoading(false);
+    };
+    loadAll();
   }, []);
 
   return (
     <main className="w-screen">
+        {pageLoading && (
+        <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/70 backdrop-blur-xl">
+          <div className="text-center space-y-4 animate-pulse">
+            <h1 className="text-3xl md:text-4xl font-semibold text-white tracking-wide">
+              Building your experience
+            </h1>
+            <p className="text-sm text-white/60">
+              Fetching the good stuff…
+            </p>
+          </div>
+        </div>
+      )}
       <section className="relative overflow-hidden">
         <Navbar
           exitSearch={exitSearch}
