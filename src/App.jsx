@@ -243,7 +243,7 @@ const App = () => {
 
           {/* MOST RATED ANIME */}
           <section
-            className="relative z-10 p-11 bg-[linear-gradient(to_bottom,rgba(6,10,30,0.85),rgba(39,3,56,0.6))]"
+            className="relative z-10 p-11 bg-[linear-gradient(to_bottom,rgba(39,3,56,0.6),rgba(39,3,56,0.6))]"
             id="top_anime"
           >
             <h2 className="text-2xl font-semibold text-white mb-4">
