@@ -1,10 +1,24 @@
 import React from "react";
 
-const Footer = () => {
-  return (
-    <footer className="relative z-10 bg-neutral-800/10 backdrop-blur-xl border-t border-white/10 mt-20" id="about_us">
-      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-12">
+const Footer = ({ exitSearch }) => {
+  const goHome = () => {
+    exitSearch?.();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
+  const goAllMovies = () => {
+    exitSearch?.();
+    document
+      .getElementById("all_movies")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <footer
+      className="relative z-10 bg-neutral-800/10 backdrop-blur-xl border-t border-white/10 mt-20"
+      id="about_us"
+    >
+      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-12">
         <div className="space-y-4">
           <h2 className="text-3xl font-bold text-white tracking-wide">
             cine<span className="text-gradient">Flix</span>
@@ -22,10 +36,16 @@ const Footer = () => {
           </h3>
 
           <ul className="space-y-3 text-sm text-white/60">
-            <li className="hover:text-white transition cursor-pointer">
+            <li
+              onClick={goHome}
+              className="hover:text-white transition cursor-pointer"
+            >
               Home
             </li>
-            <li className="hover:text-white transition cursor-pointer">
+            <li
+              onClick={goAllMovies}
+              className="hover:text-white transition cursor-pointer"
+            >
               Popular Movies
             </li>
             <li className="hover:text-white transition cursor-pointer">
@@ -77,14 +97,12 @@ const Footer = () => {
             </a>
           </div>
 
-          {/* TMDB CREDIT */}
           <p className="text-xs text-white/40 leading-relaxed">
             This product uses the TMDB API but is not endorsed or certified by TMDB.
           </p>
         </div>
       </div>
 
-      {/* BOTTOM */}
       <div className="border-t border-white/10 py-5 text-center text-xs text-white/40">
         © {new Date().getFullYear()} cineFlix · Built by Mohit Singh
       </div>
