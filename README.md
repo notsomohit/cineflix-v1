@@ -10,21 +10,6 @@ A React-based movie discovery app that uses the TMDB API to browse trending and 
 
 ---
 
-## Home page and Movie sections
-
-<p align="center">
-  <img src="public/homepage.png" width="48%"/>
-  <img src="public/sections.png" width="48%"/>
-</p>
-
-### 🔍 Movie Search
-
-<p align="center">
-  <img src="public/search.png" width="700"/>
-</p>
-
----
-
 ## ✨ Features
 
 - Browse trending movies
