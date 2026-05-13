@@ -1,46 +1,62 @@
 # 🎬 CineFlix
 
-CineFlix is a React-based web application for discovering movies using data from The Movie Database (TMDB) API.
-It provides a clean and intuitive interface to browse trending and popular movies and to search titles in real time.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TMDB API](https://img.shields.io/badge/API-TMDB-blue?style=for-the-badge)
 
-The project focuses on clarity, maintainability, and a predictable component-driven architecture.
+A React-based movie discovery app that uses the TMDB API to browse trending and popular movies and search titles in real time.
+
+---
+
+## Home page and Movie sections
+
+<p align="center">
+  <img src="public/homepage.png" width="48%"/>
+  <img src="public/sections.png" width="48%"/>
+</p>
+
+### 🔍 Movie Search
+
+<p align="center">
+  <img src="public/search.png" width="700"/>
+</p>
 
 ---
 
 ## ✨ Features
 
-* Fetch and display trending movies
-* Browse popular movies
-* 🔍 Search movies by title
-* ⏳ Loading indicators during API calls
-* ⚠️ Graceful error handling
-* 📱 Responsive layout across screen sizes
-* 🔐 Environment-based API configuration
+- Browse trending movies
+- View popular movies
+- Search movies by title
+- Loading states during API calls
+- Error handling for failed requests
+- Responsive UI
+- API key management using environment variables
 
 ---
 
 ## 🛠️ Tech Stack
 
-* ⚛️ React.js
-* 🟨 JavaScript (ES6+)
-* 🎨 Tailwind CSS
-* ⚡ Vite
-* 🌐 TMDB API
+### Frontend
+- React.js
+- JavaScript (ES6+)
+- Tailwind CSS
+- Vite
+
+### API
+- TMDB API
 
 ---
 
 ## 📁 Project Structure
 
-```
+```text
 cineflix/
 ├── public/
-│   └── assets/
 ├── src/
 │   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Search.jsx
-│   │   ├── Spinner.jsx
-│   │   └── Footer.jsx
 │   ├── App.jsx
 │   ├── main.jsx
 │   └── index.css
@@ -49,97 +65,69 @@ cineflix/
 └── README.md
 ```
 
-Each component is isolated and reusable, keeping the codebase easy to understand and extend.
+---
+
+## 💡 What I Learned
+
+Through this project, I learned:
+- React component structure
+- State management using hooks
+- Fetching API data
+- Conditional rendering
+- Handling loading & error states
+- Working with environment variables
+- Building responsive layouts using Tailwind CSS
 
 ---
 
-## 🚀 Setup and Installation
+## 🚀 Future Improvements
 
-### 📌 Requirements
+- 🎥 Detailed movie pages
+- ❤️ Favorites / Watchlist
+- 📄 Pagination or infinite scrolling
+- 🌙 Dark/Light mode
+- 🔐 User authentication
+- ⚙️ Backend integration
 
-* Node.js 16+
-* npm
+---
 
-### 📥 Clone the Repository
+## ⚙️ Setup
+
+### Clone Repository
 
 ```bash
 git clone https://github.com/notsomohit/cineflix-v1.git
 cd cineflix-v1
 ```
 
-### 📦 Install Dependencies
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 🔑 Environment Variables
+### Create Environment Variables
 
-Create a `.env` file in the root directory:
+Create a `.env` file:
 
 ```env
 VITE_TMDB_API_KEY=your_tmdb_api_key_here
 ```
 
-Do not expose or commit the API key.
-
-### ▶️ Run the App
+### Run the App
 
 ```bash
 npm run dev
 ```
 
-The app will be available at:
+App runs on:
 
-```
+```bash
 http://localhost:5173
 ```
 
 ---
 
-## 🔄 Application Flow
-
-* 🚀 On load, the app fetches trending and popular movies from TMDB
-* 🔎 Search queries trigger API requests and update results dynamically
-* ⏳ Loading and error states are handled through conditional rendering
-* 🧠 UI updates are driven entirely by React state
-
----
-
-## 🧩 Development Notes
-
-* 📌 API calls are centralized for easier maintenance
-* 🧱 Components follow a predictable data flow
-* 🎯 Styling uses a utility-first Tailored approach with Tailwind CSS
-* ⚙️ Environment variables are managed via Vite
-
----
-
-## 🛠️ Extending the Project
-
-Possible improvements include:
-
-* Detailed movie pages
-* Pagination or infinite scrolling
-* User authentication
-* Favorites or watchlist
-* Backend integration
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome.
-
-1. 🍴 Fork the repository
-2. 🌿 Create a new branch
-3. 💾 Commit your changes
-4. 🔁 Open a pull request
-
-Keep changes focused and follow existing code patterns.
-
----
-
 ## 📄 License
 
-MIT License
+This project is licensed under the MIT License.
